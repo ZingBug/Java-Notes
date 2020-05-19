@@ -15,7 +15,7 @@
 
 ## 笔记整理
 
-- [记动态代理](r/notes/记动态代理.md)
+- [记动态代理](/notes/记动态代理.md)
 - [记单例模式](/notes/记单例模式.md)
 - [记BitMap/BitSet](/notes/记BitMap-BitSet.md)
 - [记循环依赖](/notes/记循环依赖.md)
