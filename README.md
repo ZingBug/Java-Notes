@@ -8,6 +8,8 @@
 - [2020届秋招面试题总结——JVM篇](/interviews/2020届秋招面试题总结-JVM篇.md)
 - [2020届秋招面试题总结——MySQL篇](/interviews/2020届秋招面试题总结-MySQL篇.md)
 - [2020届秋招面试题总结——Redis篇](/interviews/2020届秋招面试题总结-Redis篇.md)
+- [2020届秋招面试题总结——数据结构篇](/interviews/2020届秋招面试题总结-数据结构篇.md)
+- [2020届秋招面试题总结——多线程篇](/interviews/2020届秋招面试题总结-多线程篇.md)
 - [2020届秋招面试题总结——Spring篇](/interviews/2020届秋招面试题总结-Spring篇.md)
 
 
