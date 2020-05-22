@@ -19,3 +19,4 @@
 - [记单例模式](/notes/记单例模式.md)
 - [记BitMap/BitSet](/notes/记BitMap-BitSet.md)
 - [记循环依赖](/notes/记循环依赖.md)
+- [记System.identityHashCode(obj)与obj.hashCode()的关系](/notes/记System.identityHashCode(obj)与obj.hashCode()的关系.md)
