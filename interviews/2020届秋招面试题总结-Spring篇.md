@@ -1,4 +1,4 @@
-## 2020届秋招面试题总结——Spring篇
+# 2020届秋招面试题总结——Spring篇
 
 **1、讲讲Spring的加载流程。**
 
@@ -97,15 +97,15 @@ DispatcherServlet工作流程可以用一幅图来说明。
 
 ![Y5PCYn.jpg](https://s1.ax1x.com/2020/05/19/Y5PCYn.jpg)
 
-**①发送请求**
+**①发送请求 :**
 
 用户向服务器发送HTTP请求，请求被Spring MVC的调度控制器DispatcherServlet捕获。
 
-**②映射处理器**
+**②映射处理器 :**
 
 DispatcherServlet根据请求URL，调用HandlerMapping获得该Handler配置的所有相关的对象（包括Handler对象以及Handler对象对应的拦截器），最后以HandlerExectuionChain对象的形式返回。
 
-**③处理器适配**
+**③处理器适配 :**
 
 DispatcherServlet根据获得Handler，选择一个合适的HandlerAdapter。（如果成功获得HandlerAdapter后，此时将开始执行拦截器的preHandler()方法）
 
@@ -120,11 +120,11 @@ Handler（Controller）执行完成后，向DispatcherServlet返回一个ModelAn
 
 图中没有④。
 
-**⑤解析试图**
+**⑤解析试图 :**
 
 根据返回的ModelAndView，选择一个合适的ViewResolver（必须是已经注册到Spring容器中的ViewResolver），解析出View对象，然后返回给DispatcherServlet。
 
-**⑥⑦渲染视图+相应请求**
+**⑥⑦渲染视图+相应请求 :**
 
 ViewResolver结合Model和View，来渲染视图，并写回给用户浏览器。
 
@@ -152,14 +152,14 @@ Spring Boot启动时的关键步骤，主要在两个方面：
 
 Spring在设计中用了几种常用的设计模式。
 
-**a，工厂模式**
+**a，工厂模式 :**
 
 在Spring中我们一般是将Bean的实例化直接交给容器去管理的，实现了使用和创建的分离，这时容器直接管理对象，还有种情况是，bean的创建过程我们交给一个工厂去实现，而Spring容器管理这个工厂。Spring使用工厂模式可以通过 BeanFactory 或 ApplicationContext 创建 bean 对象。两者对比如下：
 
 - BeanFactory：延迟注入（使用到某个bean的时候才会注入），相比于ApplicationContext来说会占用更少的内存，程序启动速度更快。
 - ApplicationContext：容器启动的时候，不管bean是否用到，一次性创建所有的bean。BeanFactory 仅提供了最基本的依赖注入支持，ApplicationContext 扩展了 BeanFactory ,除了有BeanFactory的功能还有额外更多功能，所以一般开发人员使用ApplicationContext会更多。
 
-**b，单例设计模式**
+**b，单例设计模式 :**
 
 在系统中，有一些对象其实我们只需要一个，比如说：线程池、缓存、对话框、注册表、日志对象等。事实上，这一类对象只能有一个实例，如果制造出多个实例就可能导致一些问题的产生，比如：程序的行为异常、资源使用量、或者不一致性的结果。
 
@@ -183,7 +183,7 @@ private final Map<String, Object> singletonObjects = new ConcurrentHashMap<>(256
 public Object getSingleton(String beanName, ObjectFactory<?> singletonFactory) {
    Assert.notNull(beanName, "Bean name must not be null");
    synchronized (this.singletonObjects) {
-        
+
       //检查缓存中是否存在实例
       Object singletonObject = this.singletonObjects.get(beanName);
       if (singletonObject == null) {
@@ -212,7 +212,7 @@ protected void addSingleton(String beanName, Object singletonObject) {
 }
 ```
 
-**c，代理模式**
+**c，代理模式 :**
 
 AOP(Aspect-Oriented Programming:面向切面编程)能够将那些与业务无关，却为业务模块所共同调用的逻辑或责任（例如事务处理、日志管理、权限控制等）封装起来，便于减少系统的重复代码，降低模块间的耦合度，并有利于未来的可拓展性和可维护性。
 
@@ -222,17 +222,17 @@ Spring AOP就是基于动态代理的，其中有两种不同的代理方法：J
 
 另外，Spring AOP属于运行时增强，而Aspect J是编译时增强。Spring AOP基于代理来实现，而Aspect J是基于字节码操作。
 
-**d，模板方法**
+**d，模板方法 :**
 
 模板方法是一种行为设计模式，它定义一个操作中的算法的骨架，而将一些步骤延迟到子类中。 模板方法使得子类可以不改变一个算法的结构即可重定义该算法的某些特定步骤的实现方式。Spring 中 jdbcTemplate、hibernateTemplate 等以 Template 结尾的对数据库操作的类，它们就使用到了模板模式。一般情况下，我们都是使用继承的方式来实现模板模式，但是 Spring 并没有使用这种方式，而是使用Callback 模式与模板方法模式配合，既达到了代码复用的效果，同时增加了灵活性。
 
-**e，观察者模式**
+**e，观察者模式 :**
 
 观察者模式是一种对象行为型模式。它表示的是一种对象与对象之间具有依赖关系，当一个对象发生改变的时候，这个对象所依赖的对象也会做出反应。Spring 事件驱动模型就是观察者模式很经典的一个应用。Spring 事件驱动模型非常有用，在很多场景都可以解耦我们的代码。比如我们每次添加商品的时候都需要重新更新商品索引，这个时候就可以利用观察者模式来解决这个问题。
 
 Spring中Observer模式常用的地方是listener的实现。如ApplicationListener。
 
-**f，适配器模式**
+**f，适配器模式 :**
 
 适配器模式(Adapter Pattern) 将一个接口转换成客户希望的另一个接口，适配器模式使接口不兼容的那些类可以一起工作，其别名为包装器(Wrapper)。
 
@@ -242,7 +242,7 @@ Spring中Observer模式常用的地方是listener的实现。如ApplicationListe
 
 为什么要在 Spring MVC 中使用适配器模式？ Spring MVC 中的 Controller 种类众多，不同类型的 Controller 通过不同的方法来对请求进行处理。如果不利用适配器模式的话，DispatcherServlet 直接获取对应类型的 Controller，需要的自行来判断，像下面这段代码一样：
 
-```
+```java
 if(mappedHandler.getHandler() instanceof MultiActionController){  
    ((MultiActionController)mappedHandler.getHandler()).xxx  
 }else if(mappedHandler.getHandler() instanceof XXX){  
@@ -254,11 +254,11 @@ if(mappedHandler.getHandler() instanceof MultiActionController){
 
 假如我们再增加一个 Controller类型就要在上面代码中再加入一行 判断语句，这种形式就使得程序难以维护，也违反了设计模式中的开闭原则 – 对扩展开放，对修改关闭。具体可以参考[SpringMVC中的适配器（适配者模式）](https://www.cnblogs.com/tongkey/p/7919401.html)
 
-**g，策略模式**
+**g，策略模式 :**
 
 策略模式对应于解决某一个问题的一个算法族，允许用户从该算法族中任选一个算法解决某一问题，同时可以方便的更换算法或者增加新的算法。并且由客户端决定调用哪个算法，spring中在实例化对象的时候用到Strategy模式。
 
-总结如下：
+总结如下 ：
 
 Spring 框架中用到了哪些设计模式？
 
@@ -283,7 +283,7 @@ Spring 框架中用到了哪些设计模式？
 <Connector port="8080"  
                    maxThreads="150" minSpareThreads="25" maxSpareThreads="75"  
                    enableLookups="false" redirectPort="8443" acceptCount="100"  
-                   debug="0" connectionTimeout="20000"   
+                   debug="0" connectionTimeout="20000"
                    disableUploadTimeout="true" />  
 ```
 
@@ -388,3 +388,4 @@ MyBatis实现分页操作时，有逻辑分页和物理分页这两个区别。
 我习惯在项目中使用PageHelper来实现分页。
 
 弥有，2019年9月
+[EOF]

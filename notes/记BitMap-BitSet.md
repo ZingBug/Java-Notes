@@ -1,4 +1,4 @@
-## 2020届秋招面试题总结——网络篇
+# 2020届秋招面试题总结——网络篇
 
 提到一个bitmap，肯定想到它是非常经典的海量数据处理工具，其本质是用bit数组的某一位来表示某一数据，从而一个bit数组可以表示海量数据。
 
@@ -111,7 +111,6 @@ public int missingNumberInByBitSet(int[] array) {
 
 ```java
 public class BitSetTest {
-    
     public static void main(String[] args)
     {
         BitSet bitSet=new BitSet(2000000000);
@@ -188,6 +187,5 @@ public class HugeBitset {
 [Java的BitSet原理及应用](https://www.jianshu.com/p/4fbad3a6d253)
 [无限下标超大型bitset的java实现，超越原生int 20亿下标的限制](https://blog.csdn.net/flyflyflyflyflyfly/article/details/82952529)
 
-
-
-弥有，2019年8月5日。
+弥有，2019年8月5日
+[EOF]
