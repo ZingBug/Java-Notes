@@ -10,12 +10,12 @@
 > - 将一个常量加载到操作数栈的指令包括：*bipush、sipush、ldc、ldc_w、ldc2_w、aconst_null、iconst_null、iconst_&lt;i&gt;、lconst_&lt;i&gt;、fconst_&lt;i&gt;、dconst_&lt;i&gt;*。  
 > - 用户扩充局部变量表的访问索引或立即数的指令：*wide*。  
 
-上面所列举的指令助记符中，有一部分是以尖括号结尾的（例如*iload_&lt;n&gt;*），这些指令助记符实际上代表了一组指令（例如*iload_&lt;n&gt;*代表了*iload_0、iload_1、iload_2和iload_3*这几个指令，需要注意的是，n是从0开始计数的）。这几组指令都是某个带有一个操作数的通用指令（例如*iload*）的特殊形式。在尖括号之间的字母指定了指令隐含操作数的数据类型，*&lt;n&gt;*代表非负的整数，*&lt;i&gt;*代表是int类型数据，*&lt;l&gt;*代表了long类型，*&lt;f&gt;*表示float类型，*&lt;d&gt;*代表了double类型。操作byte、char和short类型数据时，经常用int类型的指令来表示。
+上面所列举的指令助记符中，有一部分是以尖括号结尾的（例如*iload_&lt;n&gt;*），这些指令助记符实际上代表了一组指令（例如*iload_&lt;n&gt;*代表了*iload_0、iload_1、iload_2和iload_3*这几个指令，需要注意的是，n是从0开始计数的）。这几组指令都是某个带有一个操作数的通用指令（例如*iload*）的特殊形式。在尖括号之间的字母指定了指令隐含操作数的数据类型，&lt;n&gt;代表非负的整数，&lt;i&gt;代表是int类型数据，&lt;l&gt;代表了long类型，&lt;f&gt;表示float类型，&lt;d&gt;代表了double类型。操作byte、char和short类型数据时，经常用int类型的指令来表示。
 另外，根据int值范围，JVM整型入栈指令分为四类：当int取值-1\~5采用iconst指令，取值-128\~127采用bipush指令，取值-32768\~32767采用sipush指令，取值-2147483648\~2147483647采用 ldc 指令。(参考[JVM字节码之整型入栈指令(iconst、bipush、sipush、ldc)](https://blog.csdn.net/zhaow823/article/details/81199093))
 
 ## 1、简单的try、catch、finally例子
 
-写一个最简单的try、catch、finally例子，看一下最后返回的结果。并用javap -verbose 命令来显示目标文件(.class文件)字节码信息，如下。
+写一个最简单的try、catch、finally例子，分析最后返回的结果，并用javap -verbose 命令来显示目标文件(.class文件)字节码信息，如下所示。
 
 > 系统运行环境：Microsoft Windows [版本 10.0.19041.329] 系统 64bit  
 > JDK信息：Java(TM) SE Runtime Environment (build 14.0.1+7)
