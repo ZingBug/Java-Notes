@@ -15,11 +15,13 @@
 
 ## 1、简单的try、catch、finally例子
 
-写一个最简单的try、catch、finally例子，分析最后返回的结果，并用javap -verbose 命令来显示目标文件(.class文件)字节码信息，如下所示。
+写一个最简单的try、catch、finally例子，分析最后返回的结果，并用javap -verbose 命令来显示目标文件(.class文件)字节码信息，首先确定一下运行环境和JDK版本，不同JDK版本的字节码信息有所不同。
 
 > 系统运行环境：Microsoft Windows [版本 10.0.19041.329] 系统 64bit  
 > JDK信息：Java(TM) SE Runtime Environment (build 14.0.1+7)
 Java HotSpot(TM) 64-Bit Server VM (build 14.0.1+7, mixed mode, sharing)
+
+字节码部分略过了常量池等部分，只对Code和Exception table部分进行分析。
 
 ```java
 //Java代码
@@ -189,7 +191,7 @@ Exception table:
 
 ![Nwd5tS.png](https://s1.ax1x.com/2020/06/24/Nwd5tS.png)
 
-## 3、总结
+## 4、总结
 
 对以上所有的例子进行总结
 
@@ -207,7 +209,8 @@ Exception table:
 
 - finally块中避免再次抛出异常，否则整个包含try语句块的方法回抛出异常，并且会消化掉try、catch块中的异常。
 
-参考资料：  
+参考资料：
+
 《Java核心技术系列：Java虚拟机规范（Java SE 8版）》  
 《深入理解Java虚拟机：JVM高级特性与最佳实践（第3版）》  
 [Java字节码指令收集大全](https://www.cnblogs.com/longjee/p/8675771.html)  
