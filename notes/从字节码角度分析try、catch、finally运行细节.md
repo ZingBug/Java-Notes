@@ -211,10 +211,14 @@ Exception table:
 
 参考资料：
 
-《Java核心技术系列：Java虚拟机规范（Java SE 8版）》  
-《深入理解Java虚拟机：JVM高级特性与最佳实践（第3版）》  
+[《Java核心技术系列：Java虚拟机规范（Java SE 8版）》](https://book.douban.com/subject/26418340/)
+
+[《深入理解Java虚拟机：JVM高级特性与最佳实践（第3版）》](https://book.douban.com/subject/34907497/)
+
 [Java字节码指令收集大全](https://www.cnblogs.com/longjee/p/8675771.html)  
+
 [try catch finally异常机制Java源码+JVM字节码（内含小彩蛋）](https://blog.csdn.net/whiteBearClimb/article/details/104131005)  
+
 [Java中关于try、catch、finally中的细节分析](https://mp.weixin.qq.com/s?__biz=MzU3NDg0MTY0NQ==&mid=2247485213&idx=1&sn=982c5e92d2c15a48b59194258a40c2d2&chksm=fd2d715fca5af84976b8cd034fc52aa94e78c2750ba6bcb586f979438bf38baee283fee7de9b&mpshare=1&scene=1&srcid=0623mdjtJSGrvIRPkaj6HhNx&sharer_sharetime=1592875254832&sharer_shareid=e9e6d524172161e8393308ae6db3aa63&key=c32b5c198f0599707981fa0619311426b3104054b7dd310f3346ed0d2159420a6119aaa288eb9df1d369808227d2bb1eec8f9cbe2510d831061991b4215d7bd786a293f6f9c1033009510d6df3fc2f7f&ascene=1&uin=MjQ3MzkwMTc2Mw%3D%3D&devicetype=Windows+10+x64&version=6209007b&lang=zh_CN&exportkey=AYaxCNjrIahDUSf8A0fYYT4%3D&pass_ticket=4yLw2AbquUCok67oAc4LWcLTUZY6fTDbcUcWHB4Mj69rD%2BHCBbKgabd4I%2BGIDkfk)
 
 ZingBug，2020/6/24
