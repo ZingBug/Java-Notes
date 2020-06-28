@@ -1,5 +1,7 @@
 # 2020届秋招面试题总结——网络篇
 
+## 前言
+
 提到一个bitmap，肯定想到它是非常经典的海量数据处理工具，其本质是用bit数组的某一位来表示某一数据，从而一个bit数组可以表示海量数据。
 
 在Java中，BitSet类实现了bitmap算法。BitSet是位操作的对象，值只有0或1即false和true，**内部维护了一个long数组，初始只有一个long，所以BitSet最小的size是64，当随着存储的元素越来越多，BitSet内部会动态扩充，最终内部是由N个long来存储**，这些针对操作都是透明的。
@@ -7,6 +9,8 @@
 **用1位来表示一个数据是否出现过，0为没有出现过，1表示出现过。使用用的时候既可根据某一个是否为0表示，此数是否出现过。**
 
 一个1G的空间，有 `8*1024*1024*1024=8.58*10^9bit`，也就是可以表示85亿个不同的数。
+
+## 源码实现
 
 我们来看一下其内部实现，首先看一下**构造函数**。
 
@@ -81,6 +85,8 @@ public boolean get(int bitIndex) {
 ```
 
 整体意思就是判断bitIndex所对应的位数是否为1。
+
+## 应用场景
 
 怎么去**运用**这个bitMap思想呢。
 
@@ -182,9 +188,10 @@ public class HugeBitset {
 );
 ```
 
-参考文章：
+## 参考文章
 
 [Java的BitSet原理及应用](https://www.jianshu.com/p/4fbad3a6d253)
+
 [无限下标超大型bitset的java实现，超越原生int 20亿下标的限制](https://blog.csdn.net/flyflyflyflyflyfly/article/details/82952529)
 
 弥有，2019年8月5日

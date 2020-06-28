@@ -109,13 +109,13 @@ b hashcode: 1794106630
 
 identityHashCode()方法保证了返回的值在对象的生命周期内不会改变，注意的是，identityHashCode不能严格保证唯一！这个标识符在理论上可以用于哈希和哈希表以外的其他用途。
 
-## 简单的结论
+## 总结
 
 hashCode方法可以被重写，并返回重写后的值。
 
 identityHashCode方法是返回对象的hash值，而不管对象是否重写了hashCode方法。
 
-参考资料：
+## 参考资料
 
 [System.identityHashCode(obj) 与 obj.hashcode()](https://www.jianshu.com/p/24fa4bdb9b9d)
 

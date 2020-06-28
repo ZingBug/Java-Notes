@@ -209,7 +209,7 @@ Exception table:
 
 - finally块中避免再次抛出异常，否则整个包含try语句块的方法回抛出异常，并且会消化掉try、catch块中的异常。
 
-参考资料：
+## 5、参考资料
 
 [《Java核心技术系列：Java虚拟机规范（Java SE 8版）》](https://book.douban.com/subject/26418340/)
 
