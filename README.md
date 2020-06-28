@@ -20,4 +20,5 @@
 - [记循环依赖](/notes/记循环依赖.md)
 - [记System.identityHashCode(obj)与obj.hashCode()的关系](/notes/记System.identityHashCode(obj)与obj.hashCode()的关系.md)
 - [从字节码角度分析try、catch、finally运行细节](/notes/从字节码角度分析try、catch、finally运行细节.md)
+- [Java常量池理解及总结](/notes/Java常量池理解及总结.md)
 - [浅谈JVM中的符号引用和直接引用](/notes/浅谈JVM中的符号引用和直接引用.md)
